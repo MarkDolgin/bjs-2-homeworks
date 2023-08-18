@@ -29,5 +29,5 @@ Student.prototype.getAverage = function () {
 Student.prototype.exclude = function (reason) {
   delete this.subjects;
   delete this.marks;
-  this.exludes = reason;
+  this.exluded = reason;
 }
