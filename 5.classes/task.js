@@ -46,18 +46,21 @@ class Book extends PrintEditionItem {
 class NovelBook extends Book {
   constructor(name, releaseDate, pagesCount) {
     super(name, releaseDate, pagesCount);
+    this.author = author;
     this.type = "novel";
   }
 }
 class FantasticBook extends Book {
   constructor(name, releaseDate, pagesCount) {
     super(name, releaseDate, pagesCount);
+    this.author = author;
     this.type = "fantastic";
   }
 }
 class DetectiveBook extends Book {
   constructor(name, releaseDate, pagesCount) {
     super(name, releaseDate, pagesCount);
+    this.author = author;
     this.type = "detective";
   }
 }
