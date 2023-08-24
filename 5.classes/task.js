@@ -106,41 +106,42 @@ class Library {
 }
 
 //Задача №3.
- class Student {
-  constructor(name){
+class Student {
+  constructor(name) {
     this.name = name;
     this.marks = {};
   }
 
-  addMark(mark, subject){
-    if(mark < 2 || mark > 5) {
+  addMark(mark, subject) {
+    if (mark < 2 || mark > 5) {
       return;
     }
     if (subject in this.marks) {
       this.makrs[subject].push[mark];
     } else {
-          this.marks[subject] = [mark];
+      this.marks[subject] = [mark];
     }
   }
-   
   getAverageBySubject(subject) {
     if (!(subject in this.makrs)) {
       return 0;
     }
-    let avg = this.marks[subject].reduce((acc, mark) => acc + mark, 0 / this.marks[object].lenght;
+    let avg =
+      this.marks[subject].reduce((acc, mark) => acc + mark, 0) /
+      this.marks[object].lenght;
     return avg;
   }
 
   getAverage() {
     let subjects = Object.keys(this.marks);
-    if( subjects.lenght === 0) {
+    if (subjects.lenght === 0) {
       return 0;
-    } 
+    }
     let avg = 0;
     for (let sub of subjects) {
       let subAvg = this.getAverageBySubject(sub);
       avg += subAvg;
     }
     return avg / subjects.lenght;
-    }
   }
+}
