@@ -117,24 +117,24 @@ class Student {
       return;
     }
     if (subject in this.marks) {
-      this.makrs[subject].push[mark];
+      this.marks[subject].push[mark];
     } else {
       this.marks[subject] = [mark];
     }
   }
   getAverageBySubject(subject) {
-    if (!(subject in this.makrs)) {
+    if (!(subject in this.marks)) {
       return 0;
     }
     let avg =
       this.marks[subject].reduce((acc, mark) => acc + mark, 0) /
-      this.marks[object].lenght;
+      this.marks[object].length;
     return avg;
   }
 
   getAverage() {
     let subjects = Object.keys(this.marks);
-    if (subjects.lenght === 0) {
+    if (subjects.length === 0) {
       return 0;
     }
     let avg = 0;
@@ -142,6 +142,6 @@ class Student {
       let subAvg = this.getAverageBySubject(sub);
       avg += subAvg;
     }
-    return avg / subjects.lenght;
+    return avg / subjects.length;
   }
 }
