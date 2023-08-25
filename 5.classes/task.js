@@ -115,7 +115,7 @@ class Student {
     }
     let avg =
       this.marks[subject].reduce((acc, mark) => acc + mark, 0) /
-      this.marks[object].length;
+      this.marks[subject].length;
     return avg;
   }
 
