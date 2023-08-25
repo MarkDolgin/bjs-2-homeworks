@@ -103,12 +103,12 @@ class Student {
     if (mark < 2 || mark > 5) {
       return;
     }
-    if (subject in this.marks) {
-      this.marks[subject].push[mark];
-    } else {
-      this.marks[subject] = [mark];
+    if (this.marks[subject] === undefined) {
+      this.marks[subject] = [];
     }
+    return this.marks[subject].push[mark];
   }
+  
   getAverageBySubject(subject) {
     if (!(subject in this.marks)) {
       return 0;
