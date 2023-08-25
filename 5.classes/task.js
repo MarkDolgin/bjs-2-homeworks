@@ -80,7 +80,7 @@ class Library {
     }
   }
 
-  findBookBy(key, value) {
+  findBookBy(type, value) {
     const findResult = this.books.find((item) => item[type] === value);
     return findResult || null;
   }
