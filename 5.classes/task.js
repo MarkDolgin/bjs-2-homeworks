@@ -10,12 +10,6 @@ class PrintEditionItem {
 
   fix() {
     this.state = this.state * 1.5;
-    if (this.state < 0) {
-      this.state = 0;
-    }
-    if (this.state > 100) {
-      this.state = 100;
-    }
   }
 
   set state(state) {
@@ -58,7 +52,7 @@ class NovelBook extends Book {
 
 class FantasticBook extends Book {
   constructor(author, name, releaseDate, pagesCount) {
-    super(name, releaseDate, pagesCount, author);
+    super(author, name, releaseDate, pagesCount);
     this.type = "fantastic";
     this.author = author;
   }
@@ -66,7 +60,7 @@ class FantasticBook extends Book {
 
 class DetectiveBook extends Book {
   constructor(author, name, releaseDate, pagesCount) {
-    super(name, releaseDate, pagesCount, author);
+    super(author, name, releaseDate, pagesCount);
     this.type = "detective";
     this.author = author;
   }
@@ -87,24 +81,17 @@ class Library {
   }
 
   findBookBy(key, value) {
-    for (let book of this.books) {
-      if (book[key] === value) {
-        return book;
-      }
-    }
-    return null;
+    const findResult = this.books.find((item) => item[type] === value);
+    return findResult || null;
   }
-
+  
   giveBookByName(bookName) {
     const book = this.findBookBy("name", bookName);
-    const bookIndex = this.books.indexOf(book);
-    if (bookIndex !== 1) {
-      this.books.splice(bookIndex, 1);
-      return book;
-    } return null;
+   if (!book) return null;
+    this.books = this.books.filter((item) => item.name !== bookName);
+    return book;
   }
 }
-
 //Задача №3.
 class Student {
   constructor(name) {
