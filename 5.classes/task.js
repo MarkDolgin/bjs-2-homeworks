@@ -97,13 +97,12 @@ class Student {
   }
 
   addMark(mark, subject) {
-    if (mark < 2 || mark > 5) {
-      return;
+    if (mark >= 2 && mark <= 5) {
+      if (Object.keys(this.marks).includes(subject) === false) {
+        this.marks[subject] = [];
+      }
+      this.marks[subject].push(mark);
     }
-    if (this.marks[subject] === undefined) {
-      this.marks[subject] = [];
-    }
-    return this.marks[subject].push[mark];
   }
   
   getAverageBySubject(subject) {
