@@ -1,10 +1,11 @@
-//Задача 1
+// Задача №1
 function parseCount(argument) {
   if (isNaN(argument)) {
-    throw new error("Невалидное значение");
+    throw new Error("Невалидное значение");
   }
   return Number.parseFloat(argument);
 }
+
 function validateCount(argument) {
   try {
     return parseCount(argument);
@@ -13,7 +14,7 @@ function validateCount(argument) {
   }
 }
 
-//Задача 2
+//Задача №2
 class Triangle {
   constructor(sideA, sideB, sideC) {
     this.sideA = sideA;
@@ -25,7 +26,7 @@ class Triangle {
       this.sideA + this.sideC < this.sideB ||
       this.sideB + this.sideC < this.sideA
     ) {
-      throw new error("Треугольник с такими сторонами не существует");
+      throw new Error("Треугольник с такими сторонами не существует");
     }
   }
 
@@ -51,6 +52,7 @@ function getTriangle(sideA, sideB, sideC) {
       get area() {
         return "Ошибка! Треугольник не существует";
       }
+
       get perimeter() {
         return "Ошибка! Треугольник не существует";
       }
@@ -59,4 +61,3 @@ function getTriangle(sideA, sideB, sideC) {
     return triangle;
   }
 }
-﻿
