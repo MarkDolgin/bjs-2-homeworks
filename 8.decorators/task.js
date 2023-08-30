@@ -41,4 +41,4 @@ function debounceDecoratorNew(func, delay) {
       wrapper.allCount++;
   }
   return wrapper;
-
+}
