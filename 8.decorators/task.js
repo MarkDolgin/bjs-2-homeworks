@@ -3,10 +3,10 @@ function cachingDecoratorNew(func) {
   const maxCacheValuesCount = 5;
   return (...args) => {
     const hash = md5(args);
-    const camelCase = cache.find((object) => object.hash === hash);
-    if (camelCase) {
-      console.log("Из кеша: " + camelCase.value);
-      return "Из кеша: " + camelCase.value;
+    const objectFromCache = cache.find((object) => object.hash === hash);
+    if (objectFromCache) {
+      console.log("Из кеша: " + objectFromCache.value);
+      return "Из кеша: " + objectFromCache.value;
     }
 
     let result = func(...args);
